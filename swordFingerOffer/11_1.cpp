@@ -7,6 +7,7 @@ int MinInOrder(int* numbers, int index1, int index2);
         length: 数组的长度
  * @return: 返回最小数字
  * @author: Dongshao
+ * https://blog.csdn.net/qq_41453285/article/details/108099570
  */
 int Min(int* numbers, int length)
 {
