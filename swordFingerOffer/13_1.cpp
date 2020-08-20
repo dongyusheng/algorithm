@@ -1,4 +1,5 @@
-#include <cstdio>
+// https://blog.csdn.net/qq_41453285/article/details/108112168
+include <cstdio>
 
 int movingCountCore(int threshold, int rows, int cols, int row, int col, bool *visited);
 int checkPoint(int threshold, int rows, int cols, int row, int col, bool *visited);
