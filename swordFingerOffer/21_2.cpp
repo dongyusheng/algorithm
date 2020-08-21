@@ -28,12 +28,12 @@ void ReorderOddEvent(int *pData, int length)
 
     while(pBgein < pEnd)
     {
-        // 找到偶数
-        while((pBgein < pEnd) && ((*pBgein ^ 0x1) != 0))
+        // 从左往右找偶数
+        while((pBgein < pEnd) && ((*pBgein & 0x1) != 0))
             pBgein++;
         
-        //  找到奇数
-        while((pEnd > pBgein) && ((*pEnd ^ 0x1) == 0))
+        //  从右往左找奇数
+        while((pEnd > pBgein) && ((*pEnd & 0x1) == 0))
             pEnd--;
         
         if(pBgein < pEnd)
