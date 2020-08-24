@@ -40,7 +40,7 @@ bool HasSubtree(BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2)
     {
         // 如果两个节点的值相等, 递归判断
         if(Equal(pRoot1->m_dbValue, pRoot2->m_dbValue))
-            return DoesTreeHaveTree2(pRoot1, pRoot2);
+            result = DoesTreeHaveTree2(pRoot1, pRoot2);
         
         // 如果两个节点的值不相等, 那么将pRoot1的左子树与pRoot2继续进行比较
         if(!result)
