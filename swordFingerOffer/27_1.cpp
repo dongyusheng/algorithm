@@ -1,19 +1,20 @@
-// 
+// https://blog.csdn.net/qq_41453285/article/details/108181213
 /*
  * @Description: 
  * @Version: 1.0
  * @Autor: Dongshao
  * @Date: 2020-07-31 09:09:08
  * @LastEditors: Dongshao
- * @LastEditTime: 2020-08-23 11:54:23
+ * @LastEditTime: 2020-08-24 09:16:15
  */
 
 #include <cstdio>
 #include <cstdlib>
+#include <stack>
 
 struct BinaryTreeNode
 {
-    double                 m_dbValue;
+    int                 m_nValue;
     BinaryTreeNode*        m_pLeft;
     BinaryTreeNode*        m_pRight;
 };
@@ -24,16 +25,19 @@ void MirrorRecursively(BinaryTreeNode *pNode)
     if(pNode == nullptr)
         return;
     
+    if(pNode->m_pLeft == nullptr && pNode->m_pRight == nullptr)
+        return;
+
     // 交换其左右子树的指针
     BinaryTreeNode *temp = pNode->m_pLeft;
     pNode->m_pLeft = pNode->m_pRight;
-    pNode->m_pRight->temp;
+    pNode->m_pRight = temp;
 
     // 继续交换左右节点
     if(pNode->m_pLeft != nullptr)
-        MirrorRecurively(pNode->m_pLeft);
+        MirrorRecursively(pNode->m_pLeft);
     if(pNode->m_pRight != nullptr)
-        MirrorRecurively(pNode->m_pRight);
+        MirrorRecursively(pNode->m_pRight);
 }
 
 void MirrorIteratively(BinaryTreeNode* pRoot)
@@ -79,6 +83,30 @@ void ConnectTreeNodes(BinaryTreeNode* pParent, BinaryTreeNode* pLeft, BinaryTree
         pParent->m_pLeft = pLeft;
         pParent->m_pRight = pRight;
     }
+}
+
+void PrintTreeNode(const BinaryTreeNode* pNode)
+{
+    if(pNode != nullptr)
+    {
+        printf("value of this node is: %d\n", pNode->m_nValue);
+
+        if(pNode->m_pLeft != nullptr)
+            printf("value of its left child is: %d.\n", pNode->m_pLeft->m_nValue);
+        else
+            printf("left child is nullptr.\n");
+
+        if(pNode->m_pRight != nullptr)
+            printf("value of its right child is: %d.\n", pNode->m_pRight->m_nValue);
+        else
+            printf("right child is nullptr.\n");
+    }
+    else
+    {
+        printf("this node is nullptr.\n");
+    }
+
+    printf("\n");
 }
 
 void PrintTree(const BinaryTreeNode* pRoot)
