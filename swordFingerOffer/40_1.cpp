@@ -16,7 +16,7 @@ void getLeastNumbers(int *input, int n, int *output, int k)
     
     int result;
     int start = 0;
-    int end = n;
+    int end = n - 1;
 
     int index = Partition(input, n, start, end);
 
