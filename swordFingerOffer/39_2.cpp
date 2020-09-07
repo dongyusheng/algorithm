@@ -55,18 +55,6 @@ int Partition(int data[], int length, int start, int end)
  
     return small;
 }
- 
-void quickSort(int data[], int length, int start, int end)
-{
-    if(start == end)
-        return;
-    
-    int index = Partition(data, length, start, end);
-    if(index > end)
-        Partition(data, length, start, index - 1);
-    if(index < end)
-        Partition(data, length, index + 1, end);
-}
 
 // 检测number是否是numbers的中位数
 bool CheckMoreThanHalf(int *numbers, int length, int number)
