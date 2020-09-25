@@ -43,7 +43,7 @@ bool equal(double num1, double num2)
 
 double PowerWithUnsignedExponent(double base, unsigned int exponent)
 {
-    int result = 1.0;
+    double result = 1.0;
     for(int i = 1; i <= exponent; ++i)
         result *= base;
     return result;
