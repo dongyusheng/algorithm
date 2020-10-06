@@ -1,3 +1,5 @@
-本专栏的内容包括但不限于：
-* 基础的C/C++数据结构与算法
-* 面试中常用的基本的数据结构与算法
+目录结构
+* LeetCode: LeetCode刷题代码
+* c++Algorithms: https://blog.csdn.net/qq_41453285/category_9531491.html博客专栏对应的代码
+* swordFingerOffer: 《剑指Offer》书籍刷题代码
+* 其余目录: 杂乱代码
